@@ -11,11 +11,11 @@ export default function Wrapper() {
   const [videoDetail, setVideoDetail] = useState(videoDetailsData[0]);
 
   const selectedVideoDetail = (clickedId) => {
-    const foundVideo = videoDetailsData.find((video) => clickedId === video.id);
+    const foundVideo = videoDetailsData.find((Video) => clickedId === Video.id);
     setVideoDetail(foundVideo);
   };
   const filteredVideos = videosData.filter(
-    (video) => video.id !== videoDetail.id
+    (Video) => Video.id !== videoDetail.id
   );
   return (
     <div>

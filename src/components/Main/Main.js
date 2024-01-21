@@ -5,20 +5,18 @@ import add_comment from "../../Assets/Icons/add_comment.svg";
 import mohanMuruge from "../../Assets/Images/Mohan-muruge.jpg";
 
 export default function Main({ videoDetail }) {
-  const dateFormat = {
-    year: "numeric",
-    month: "2-digit",
-    day: "2-digit",
-  };
   return (
     <main>
       <h2>{videoDetail.title}</h2>
       <hr />
       <div>
-        <p> By {videoDetail.channel}</p>
+        <h3> By {videoDetail.channel}</h3>
         <p>
-          new Date({videoDetail.timestamp}.toLocaleDateString("en-US",
-          dateFormat);
+          {new Date(videoDetail.timestamp).toLocaleDateString("en-US", {
+            year: "numeric",
+            month: "2-digit",
+            day: "2-digit",
+          })}
         </p>
       </div>
       <div>
@@ -27,7 +25,6 @@ export default function Main({ videoDetail }) {
           {videoDetail.views}
         </p>
         <p>
-          {" "}
           <img src={likes} alt="Likes icon" />
           {videoDetail.likes}
         </p>
@@ -36,15 +33,15 @@ export default function Main({ videoDetail }) {
       <p>{videoDetail.description}</p>
       <h3> {videoDetail.comments.length} Comments</h3>
       <form action="">
-        <img src="{mohanMuruge}" alt="Profile picture of a user" srcset="" />
+        <img src={mohanMuruge} alt="Profile picture of a user" />
         <label htmlFor="comment">Join the conversation</label>{" "}
         <textarea
           id="comment"
           type="text"
           name="comment"
           placeholder="Add a new comment"
-          minlength="1"
-          maxlength="200"
+          minLength="1"
+          maxLength="200"
           rows="3"
           columns="32"
           required
@@ -56,7 +53,23 @@ export default function Main({ videoDetail }) {
       </form>
       <hr />
       <ul>
-        <li></li>
+        {videoDetail.comments.map((comment) => (
+          <li key={comment.id}>
+            <image src=" " alt="Image placeholder for users photo"></image>
+            <section>
+              <h3> {comment.name} </h3>
+              <p>
+                {new Date(comment.timestamp).toLocaleDateString("en-US", {
+                  year: "numeric",
+                  month: "2-digit",
+                  day: "2-digit",
+                })}
+              </p>
+              <p>{comment.comment}</p>
+            </section>
+            <hr />
+          </li>
+        ))}
       </ul>
     </main>
   );
