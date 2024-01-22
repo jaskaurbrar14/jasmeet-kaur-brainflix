@@ -1,0 +1,12 @@
+@use "./typography" as *;
+@use "./variables" as *;
+@use "./mixins" as *;
+// resets
+*,
+*::after,
+*::before {
+  @include reset;
+}
+body {
+  font-family: "Avenir Next LT Pro", Sans-serif;
+}

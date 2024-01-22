@@ -1,0 +1,19 @@
+@use "../../styles/partials/global" as *;
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+
+.Main-page {
+  @include page-width(0 1rem);
+  display: flex;
+  flex-direction: column;
+  @include tablet {
+    @include page-width(0 2.25rem);
+  }
+  @include desktop {
+    gap: 1.5rem;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 80rem;
+    @include page-width(0 auto);
+  }
+}
