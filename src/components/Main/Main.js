@@ -6,12 +6,12 @@ import mohanMuruge from "../../Assets/Images/Mohan-muruge.jpg";
 
 export default function Main({ videoDetail }) {
   return (
-    <main>
-      <h2>{videoDetail.title}</h2>
-      <hr />
-      <div>
-        <h3> By {videoDetail.channel}</h3>
-        <p>
+    <main className="Main">
+      <h2 className="Main__heading">{videoDetail.title}</h2>
+      <hr className="divider" />
+      <div className="Main__channel">
+        <h3 className="Main__channel-name"> By {videoDetail.channel}</h3>
+        <p className="Main__channel-date">
           {new Date(videoDetail.timestamp).toLocaleDateString("en-US", {
             year: "numeric",
             month: "2-digit",
@@ -19,23 +19,41 @@ export default function Main({ videoDetail }) {
           })}
         </p>
       </div>
-      <div>
-        <p>
-          <img src={views} alt="Views icon" />
+      <div className="Main__activity">
+        <p className="Main__activity-views">
+          <img
+            className="Main__activity-views-img"
+            src={views}
+            alt="Views icon"
+          />
           {videoDetail.views}
         </p>
-        <p>
-          <img src={likes} alt="Likes icon" />
+        <p className="Main__activity-likes">
+          <img
+            className="Main__activity-likes-img"
+            src={likes}
+            alt="Likes icon"
+          />
           {videoDetail.likes}
         </p>
       </div>
-      <hr />
-      <p>{videoDetail.description}</p>
-      <h3> {videoDetail.comments.length} Comments</h3>
-      <form action="">
-        <img src={mohanMuruge} alt="Profile picture of a user" />
-        <label htmlFor="comment">Join the conversation</label>{" "}
+      <hr className="divider" />
+      <p className="Main__description">{videoDetail.description}</p>
+      <h3 className="Main__sub-heading">
+        {" "}
+        {videoDetail.comments.length} Comments
+      </h3>
+      <form className="Main__form" action="">
+        <img
+          className="Main__form-img"
+          src={mohanMuruge}
+          alt="Profile picture of a user"
+        />
+        <label className="Main__form-label" htmlFor="comment">
+          Join the conversation
+        </label>{" "}
         <textarea
+          className="Main__form-input"
           id="comment"
           type="text"
           name="comment"
@@ -46,28 +64,36 @@ export default function Main({ videoDetail }) {
           columns="32"
           required
         ></textarea>
-        <button type="submit">
-          <img className="" src={add_comment} alt="Add comment button" />
+        <button className="Main__form-button" type="submit">
+          <img
+            className="Main__form-button-img"
+            src={add_comment}
+            alt="Add comment button"
+          />
           comment
         </button>
       </form>
-      <hr />
-      <ul>
+      <hr className="divider" />
+      <ul className="Main__comment">
         {videoDetail.comments.map((comment) => (
           <li key={comment.id}>
-            <image src=" " alt="Image placeholder for users photo"></image>
-            <section>
-              <h3> {comment.name} </h3>
-              <p>
+            <img
+              className="Main__comment-img"
+              src=" "
+              alt="Image placeholder for users photo"
+            ></img>
+            <section className="Main__comment-info">
+              <h3 className="Main__comment-info-heading"> {comment.name} </h3>
+              <p className="Main__comment-info-date">
                 {new Date(comment.timestamp).toLocaleDateString("en-US", {
                   year: "numeric",
                   month: "2-digit",
                   day: "2-digit",
                 })}
               </p>
-              <p>{comment.comment}</p>
+              <p className="Main__comment-info-comment">{comment.comment}</p>
             </section>
-            <hr />
+            <hr className="divider" />
           </li>
         ))}
       </ul>

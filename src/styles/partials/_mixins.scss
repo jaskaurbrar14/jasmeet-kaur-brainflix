@@ -22,49 +22,7 @@
   margin: $margin;
 }
 
-@mixin header($font-size, $font-weight, $color, $line-height) {
-  font-size: $font-size;
-  font-weight: $font-weight;
-  line-height: $line-height;
-  color: $color;
-}
-
-@mixin page-heading($font-size, $font-weight, $color, $line-height) {
-  font-size: $font-size;
-  font-weight: $font-weight;
-  line-height: $line-height;
-  color: $color;
-}
-
-@mixin section-heading($font-size, $font-weight, $line-height, $color) {
-  font-size: $font-size;
-  font-weight: $font-weight;
-  line-height: $line-height;
-  color: $color;
-}
-
-@mixin sub-section-heading($font-size, $font-weight, $line-height, $color) {
-  font-size: $font-size;
-  font-weight: $font-weight;
-  line-height: $line-height;
-  color: $color;
-}
-
-@mixin body-text($font-size, $font-weight, $line-height, $color) {
-  font-size: $font-size;
-  font-weight: $font-weight;
-  line-height: $line-height;
-  color: $color;
-}
-
-@mixin footer-text($font-size, $font-weight, $line-height, $color) {
-  font-size: $font-size;
-  font-weight: $font-weight;
-  line-height: $line-height;
-  color: $color;
-}
-
-@mixin cta-text($font-size, $font-weight, $line-height, $color) {
+@mixin text($font-size, $font-weight, $line-height, $color) {
   font-size: $font-size;
   font-weight: $font-weight;
   line-height: $line-height;

@@ -1,3 +1,102 @@
 @use "../../styles/partials/global" as *;
 @use "../../styles/partials/variables" as *;
 @use "../../styles/partials/mixins" as *;
+
+.Main {
+  &__heading {
+    @include text(0.75rem, 600, 1.25rem, $prm-black);
+    @include tablet {
+      @include text(0.75rem, 600, 1.25rem, $prm-black);
+    }
+  }
+  .divider {
+  }
+  &__channel {
+    &-name {
+    }
+    &-date {
+    }
+  }
+  &__activity {
+    &-views {
+      &-img {
+      }
+    }
+    &-likes {
+      &-img {
+      }
+    }
+  }
+  &__description {
+  }
+  &__sub-heading {
+  }
+  &__form {
+    &-img {
+      background-color: $sec-mercury;
+      width: 2.25rem;
+      height: 2.25rem;
+      border-radius: 50%;
+      object-fit: cover;
+      object-position: left;
+      @include tablet {
+        width: 2.5rem;
+        height: 2.5rem;
+      }
+    }
+    &-label {
+    }
+    &-input {
+    }
+    &-button {
+      border-radius: 0.25rem;
+      border: 0px;
+      height: 2.5rem;
+      background-color: $prm-blue;
+      width: 100%;
+      text-transform: uppercase;
+      @include text(0.75rem, 600, 1.25rem, $prm-white);
+      flex: 0 0 100%;
+      padding: 0.5rem;
+      position: relative;
+      display: none;
+
+      @include tablet {
+        display: block;
+        width: 9.375rem;
+        flex: 0 1 auto;
+      }
+
+      &:hover {
+        background-color: $sec-blue;
+      }
+      &-img {
+        position: absolute;
+        left: 0.5rem;
+      }
+    }
+  }
+  &__comment {
+    &-img {
+      background-color: $sec-mercury;
+      width: 2.25rem;
+      height: 2.25rem;
+      border-radius: 50%;
+      object-fit: cover;
+      object-position: left;
+      @include tablet {
+        width: 2.5rem;
+        height: 2.5rem;
+        flex: 0 1 auto;
+      }
+      &-info {
+        &-heading {
+        }
+        &-date {
+        }
+        &-comment {
+        }
+      }
+    }
+  }
+}

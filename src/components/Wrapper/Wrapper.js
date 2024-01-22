@@ -18,7 +18,7 @@ export default function Wrapper() {
     (Video) => Video.id !== videoDetail.id
   );
   return (
-    <div>
+    <div className="Main-page">
       <Video videoDetail={videoDetail} />
       <Main videoDetail={videoDetail} />
       <Aside videos={filteredVideos} selectVideo={selectedVideoDetail} />
