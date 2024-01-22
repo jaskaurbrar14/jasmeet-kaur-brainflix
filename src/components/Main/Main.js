@@ -10,32 +10,37 @@ export default function Main({ videoDetail }) {
       <h2 className="Main__heading">{videoDetail.title}</h2>
       <hr className="divider" />
       <div className="Main__channel">
-        <h3 className="Main__channel-name"> By {videoDetail.channel}</h3>
-        <p className="Main__channel-date">
-          {new Date(videoDetail.timestamp).toLocaleDateString("en-US", {
-            year: "numeric",
-            month: "2-digit",
-            day: "2-digit",
-          })}
-        </p>
-      </div>
-      <div className="Main__activity">
-        <p className="Main__activity-views">
-          <img
-            className="Main__activity-views-img"
-            src={views}
-            alt="Views icon"
-          />
-          {videoDetail.views}
-        </p>
-        <p className="Main__activity-likes">
-          <img
-            className="Main__activity-likes-img"
-            src={likes}
-            alt="Likes icon"
-          />
-          {videoDetail.likes}
-        </p>
+        <div className="Main__channel-details">
+          <h3 className="Main__channel-details-name">
+            {" "}
+            By {videoDetail.channel}
+          </h3>
+          <p className="Main__channel-details-date">
+            {new Date(videoDetail.timestamp).toLocaleDateString("en-US", {
+              year: "numeric",
+              month: "2-digit",
+              day: "2-digit",
+            })}
+          </p>
+        </div>
+        <div className="Main__channel-activity">
+          <p className="Main__channel-activity-views">
+            <img
+              className="Main__channel-activity-views-img"
+              src={views}
+              alt="Views icon"
+            />
+            {videoDetail.views}
+          </p>
+          <p className="Main__channel-activity-likes">
+            <img
+              className="Main__channel-activity-likes-img"
+              src={likes}
+              alt="Likes icon"
+            />
+            {videoDetail.likes}
+          </p>
+        </div>
       </div>
       <hr className="divider" />
       <p className="Main__description">{videoDetail.description}</p>
@@ -49,54 +54,61 @@ export default function Main({ videoDetail }) {
           src={mohanMuruge}
           alt="Profile picture of a user"
         />
-        <label className="Main__form-label" htmlFor="comment">
-          Join the conversation
-        </label>{" "}
-        <textarea
-          className="Main__form-input"
-          id="comment"
-          type="text"
-          name="comment"
-          placeholder="Add a new comment"
-          minLength="1"
-          maxLength="200"
-          rows="3"
-          columns="32"
-          required
-        ></textarea>
-        <button className="Main__form-button" type="submit">
-          <img
-            className="Main__form-button-img"
-            src={add_comment}
-            alt="Add comment button"
-          />
-          comment
-        </button>
+        <div className="Main__form-input">
+          <div className="Main__form-input-wrapper">
+            <label className="Main__form-input-wrapper-label" htmlFor="comment">
+              Join the conversation
+            </label>{" "}
+            <input
+              className="Main__form-input-wrapper-input"
+              id="comment"
+              type="text"
+              name="comment"
+              placeholder="Add a new comment"
+              minLength="1"
+              maxLength="200"
+              required
+            ></input>
+          </div>
+          <button className="Main__form-input-button" type="submit">
+            <img
+              className="Main__form-input-button-img"
+              src={add_comment}
+              alt="Add comment button"
+            />
+            comment
+          </button>
+        </div>
       </form>
       <hr className="divider" />
-      <ul className="Main__comment">
+      <ul className="Main__comment-list">
         {videoDetail.comments.map((comment) => (
-          <li key={comment.id}>
+          <li className="Main__comment" key={comment.id}>
             <img
               className="Main__comment-img"
               src=" "
               alt="Image placeholder for users photo"
             ></img>
             <section className="Main__comment-info">
-              <h3 className="Main__comment-info-heading"> {comment.name} </h3>
-              <p className="Main__comment-info-date">
-                {new Date(comment.timestamp).toLocaleDateString("en-US", {
-                  year: "numeric",
-                  month: "2-digit",
-                  day: "2-digit",
-                })}
-              </p>
+              <div className="Main__comment-info-user">
+                <h3 className="Main__comment-info-user-heading">
+                  {" "}
+                  {comment.name}{" "}
+                </h3>
+                <p className="Main__comment-info-user-date">
+                  {new Date(comment.timestamp).toLocaleDateString("en-US", {
+                    year: "numeric",
+                    month: "2-digit",
+                    day: "2-digit",
+                  })}
+                </p>
+              </div>
               <p className="Main__comment-info-comment">{comment.comment}</p>
             </section>
-            <hr className="divider" />
           </li>
         ))}
       </ul>
+      <hr className="divider" />
     </main>
   );
 }

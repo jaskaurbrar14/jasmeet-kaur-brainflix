@@ -4,16 +4,16 @@
 
 .Video-section {
   background-color: $sec-black;
+  flex: 0 0 100%;
 
   &__video {
     display: block;
     width: 100%;
     @include tablet {
-      @include page-width(0 2.25rem);
+      padding: 0 2.25rem;
     }
     @include desktop {
-      max-width: 70rem;
-      margin: 0 auto;
+      padding: 0 5rem;
     }
   }
 }

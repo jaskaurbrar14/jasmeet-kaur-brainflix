@@ -7,19 +7,18 @@ export default function Aside({ videos, selectVideo }) {
       <ul className="aside__list">
         {videos.map((video) => (
           <li
-            className="aside__list-info"
+            className="aside__list-video"
             key={video.id}
             onClick={() => selectVideo(video.id)}
           >
             <img
-              className="aside__list-info-img"
-              width="200px"
+              className="aside__list-video-img"
               src={video.image}
               alt={video.title}
             ></img>
-            <section>
-              <h3 className="aside__list-info-heading"> {video.title} </h3>
-              <p className="aside__list-info-channel">{video.channel}</p>
+            <section className="aside__list-video-info">
+              <h3 className="aside__list-video-info-heading">{video.title}</h3>
+              <p className="aside__list-video-info-channel">{video.channel}</p>
             </section>
           </li>
         ))}
