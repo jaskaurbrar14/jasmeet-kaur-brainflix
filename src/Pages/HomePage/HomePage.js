@@ -1,8 +1,8 @@
 import Main from "../../components/Main/Main.js";
 import Aside from "../../components/Aside/Aside.js";
 import Video from "../../components/Video/Video.js";
-import videoDetailsData from "../../Assets/Data/video-details.json";
-import videosData from "../../Assets/Data/videos.json";
+import videoDetailsData from "../../Data/video-details.json";
+import videosData from "../../Data/videos.json";
 import { useState } from "react";
 import "./HomePage.scss";
 
