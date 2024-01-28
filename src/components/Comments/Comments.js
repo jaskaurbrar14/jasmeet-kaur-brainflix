@@ -45,7 +45,7 @@ export default function Comments({ videoDetail }) {
       </form>
       <hr className="divider" />
       <ul className="Comments__comment-list">
-        {videoDetail.comments.map((comment) => (
+        {videoDetail.comments.map((comment) => {
           <li className="Comments__comment" key={comment.id}>
             <img
               className="Comments__comment-img"
@@ -70,8 +70,8 @@ export default function Comments({ videoDetail }) {
                 {comment.comment}
               </p>
             </section>
-          </li>
-        ))}
+          </li>;
+        })}
       </ul>
       <hr className="divider" />
     </>

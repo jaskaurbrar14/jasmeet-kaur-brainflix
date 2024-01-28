@@ -42,7 +42,7 @@ export default function Main({ videoDetail }) {
       </div>
       <hr className="divider" />
       <p className="Main__description">{videoDetail.description}</p>
-      <Comments videoDetail={videoDetail} />
+      {/* <Comments videoDetail={videoDetail} /> */}
     </main>
   );
 }
