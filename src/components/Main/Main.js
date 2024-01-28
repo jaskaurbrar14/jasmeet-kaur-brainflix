@@ -44,20 +44,19 @@ export default function Main({ videoDetail }) {
       <hr className="divider" />
       <p className="Main__description">{videoDetail.description}</p>
       <h3 className="Main__sub-heading">
-        {" "}
         {videoDetail.comments.length} Comments
       </h3>
       <form className="Main__form" action="">
         <img
           className="Main__form-img"
           src={mohanMuruge}
-          alt="Profile picture of a user"
+          alt="Profile of a user"
         />
         <div className="Main__form-input">
           <div className="Main__form-input-wrapper">
             <label className="Main__form-input-wrapper-label" htmlFor="comment">
               Join the conversation
-            </label>{" "}
+            </label>
             <input
               className="Main__form-input-wrapper-input"
               id="comment"
@@ -86,7 +85,7 @@ export default function Main({ videoDetail }) {
             <img
               className="Main__comment-img"
               src=" "
-              alt="Image placeholder for users photo"
+              alt="placeholder for users"
             ></img>
             <section className="Main__comment-info">
               <div className="Main__comment-info-user">
