@@ -42,6 +42,7 @@
     border-radius: 4px;
     @include tablet {
       flex: 0 1 auto;
+
       width: auto;
       margin-left: auto;
       width: 15rem;
@@ -72,30 +73,35 @@
     }
   }
   &-button {
-    border-radius: 0.25rem;
-    border: 0px;
-    height: 2.5rem;
-    background-color: $prm-blue;
-    width: 100%;
-    text-transform: uppercase;
-    @include text(0.75rem, 600, 1.25rem, $prm-white);
     flex: 0 0 100%;
-    padding: 0.5rem;
-    position: relative;
-    display: none;
-
+    display: block;
     @include tablet {
-      display: block;
-      width: 9.375rem;
-      flex: 0 1 auto;
+      flex: 1 0 auto;
     }
+    &__btn {
+      border-radius: 0.25rem;
+      border: 0px;
+      height: 2.5rem;
+      background-color: $prm-blue;
+      width: 100%;
+      text-transform: uppercase;
+      @include text(0.75rem, 600, 1.25rem, $prm-white);
+      padding: 0.5rem;
+      position: relative;
+      display: none;
 
-    &:hover {
-      background-color: $sec-blue;
-    }
-    &__img {
-      position: absolute;
-      left: 0.5rem;
+      @include tablet {
+        display: block;
+        width: 9.375rem;
+      }
+
+      &:hover {
+        background-color: $sec-blue;
+      }
+      &-img {
+        position: absolute;
+        left: 0.5rem;
+      }
     }
   }
   &-profile {
@@ -112,28 +118,33 @@
     }
   }
   &-upload {
-    border-radius: 0.25rem;
-    border: 0px;
-    height: 2.5rem;
-    background-color: $prm-blue;
-    width: 100%;
-    text-transform: uppercase;
-    @include text(0.625rem, 600, 1.25rem, $prm-white);
     flex: 0 0 100%;
-    padding: 0.5rem;
-    position: relative;
+    display: block;
+    &__btn {
+      display: block;
+      border-radius: 0.25rem;
+      border: 0px;
+      height: 2.5rem;
+      background-color: $prm-blue;
+      width: 100%;
+      text-transform: uppercase;
+      @include text(0.625rem, 600, 1.25rem, $prm-white);
+      flex: 0 0 100%;
+      padding: 0.5rem;
+      position: relative;
 
-    @include tablet {
-      display: none;
-      width: 9.375rem;
-    }
+      @include tablet {
+        display: none;
+        width: 9.375rem;
+      }
 
-    &:hover {
-      background-color: $sec-blue;
-    }
-    &__img {
-      position: absolute;
-      left: 0.5rem;
+      &:hover {
+        background-color: $sec-blue;
+      }
+      &-img {
+        position: absolute;
+        left: 0.5rem;
+      }
     }
   }
 }

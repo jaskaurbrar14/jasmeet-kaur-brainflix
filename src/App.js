@@ -7,8 +7,9 @@ import UploadPage from "./Pages/UploadPage/UploadPage.js";
 function App() {
   return (
     <>
-      <Header />
       <BrowserRouter>
+        <Header />
+
         <Routes>
           <Route path="/" element={<HomePage />} />
           {/* <Route path="video" element={</>} /> */}

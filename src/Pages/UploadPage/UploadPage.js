@@ -1,4 +1,6 @@
 import "./UploadPage.scss";
+import videoThumbnail from "../../Assets/Images/Upload-video-preview.jpg";
+import publish from "../../Assets/Icons/publish.svg";
 
 export default function UploadPage() {
   return (
@@ -10,55 +12,61 @@ export default function UploadPage() {
           <p className="UploadPage__form-Video-label">Video Thumbnail</p>
           <img
             className="UploadPage__form-Video-thumbnail"
-            src="../../Assets/Images/Upload-video-preview.jpg"
+            src={videoThumbnail}
             alt="Video upload thumbnail"
           ></img>
         </div>
-
-        <div className="UploadPage__form-title">
-          <label className="UploadPage__form-title-label" htmlFor="video title">
-            Title your video
-          </label>
-          <input
-            className="UploadPage__form-title-input"
-            id="video title"
-            type="text"
-            name="video title"
-            placeholder="Add a title to your video"
-            minLength="1"
-            maxLength="100"
-            required
-          ></input>
+        <div className="UploadPage__form-text">
+          <div className="UploadPage__form-text-title">
+            <label
+              className="UploadPage__form-text-title-label"
+              htmlFor="video title"
+            >
+              Title your video
+            </label>
+            <input
+              className="UploadPage__form-text-title-input"
+              id="video title"
+              type="text"
+              name="video title"
+              placeholder="Add a title to your video"
+              minLength="1"
+              maxLength="100"
+              required
+            ></input>
+          </div>
+          <div className="UploadPage__form-text-description">
+            <label
+              className="UploadPage__form-text-description-label"
+              htmlFor="video description"
+            >
+              Add a video description
+            </label>
+            <textarea
+              className="UploadPage__form-text-description-input"
+              id="video description"
+              type="text"
+              name="video description"
+              placeholder="Add a description to your video"
+              minLength="1"
+              maxLength="200"
+              rows="3"
+              required
+            ></textarea>
+          </div>{" "}
         </div>
-        <div className="UploadPage__form-description">
-          <label
-            className="UploadPage__form-description-label"
-            htmlFor="video description"
-          >
-            Add a video description
-          </label>
-          <input
-            className="UploadPage__form-description-input"
-            id="video description"
-            type="text"
-            name="video description"
-            placeholder="Add a description to your video"
-            minLength="1"
-            maxLength="200"
-            required
-          ></input>
-        </div>
-        <hr className="UploadPage__divider" />
+        <hr className="UploadPage__form-divider" />
         <div className="UploadPage__form-cta">
           <button className="UploadPage__form-cta-cancel">Cancel</button>
           <button className="UploadPage__form-cta-publish">
             <img
               className="UploadPage__form-cta-publish-image"
-              src="../../Assets/Icons/publish.svg"
+              src={publish}
               alt="Publish button"
             />
             Publish
           </button>
+          <button className="UploadPage__form-cta-cancel1">Cancel</button>
         </div>
       </form>
     </main>

@@ -28,10 +28,10 @@ export default function Header() {
           name="search"
         />
       </div>
-      <Link to="/video-upload-page">
-        <button className="header-button" type="button">
+      <Link to="/video-upload-page" className="header-button">
+        <button className="header-button__btn" type="button">
           <img
-            className="header-button__img"
+            className="header-button__btn-img"
             src={upload}
             alt="upload button"
           />
@@ -40,10 +40,16 @@ export default function Header() {
       </Link>
 
       <img className="header-profile" src={mohanMuruge} alt="Mohan Muruge" />
-      <button type="button" className="header-upload">
-        <img className="header-upload__img" src={upload} alt="upload button" />
-        Upload
-      </button>
+      <Link to="/video-upload-page" className="header-upload">
+        <button type="button" className="header-upload__btn">
+          <img
+            className="header-upload__btn-img"
+            src={upload}
+            alt="upload button"
+          />
+          Upload
+        </button>
+      </Link>
     </header>
   );
 }
