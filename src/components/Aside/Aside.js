@@ -17,7 +17,7 @@ export default function Aside({ videos, selectVideo }) {
               alt={video.title}
             ></img>
             <section className="aside__list-video-info">
-              <h3 className="aside__list-video-info-heading">{video.title}</h3>
+              <h2 className="aside__list-video-info-heading">{video.title}</h2>
               <p className="aside__list-video-info-channel">{video.channel}</p>
             </section>
           </li>

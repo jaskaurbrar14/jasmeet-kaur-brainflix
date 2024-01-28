@@ -7,12 +7,11 @@ import mohanMuruge from "../../Assets/Images/Mohan-muruge.jpg";
 export default function Main({ videoDetail }) {
   return (
     <main className="Main">
-      <h2 className="Main__heading">{videoDetail.title}</h2>
+      <h1 className="Main__heading">{videoDetail.title}</h1>
       <hr className="divider" />
       <div className="Main__channel">
         <div className="Main__channel-details">
           <h3 className="Main__channel-details-name">
-            {" "}
             By {videoDetail.channel}
           </h3>
           <p className="Main__channel-details-date">

@@ -1,0 +1,40 @@
+@use "../../styles/partials/global" as *;
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+
+.UploadPage {
+  &__heading {
+  }
+  &__divider {
+  }
+  &__form {
+    &-video {
+      &-label {
+      }
+      &-thumbnail {
+      }
+    }
+    &-title {
+      &-label {
+      }
+
+      &-input {
+      }
+    }
+    &-description {
+      &-label {
+      }
+
+      &-input {
+      }
+    }
+    &-cta {
+      &-cancel {
+      }
+      &-publish {
+        &-image {
+        }
+      }
+    }
+  }
+}

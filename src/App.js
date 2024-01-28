@@ -1,12 +1,12 @@
 import Header from "./components/Header/Header.js";
-import Wrapper from "./components/Wrapper/Wrapper.js";
 import "./App.scss";
+import HomePage from "./Pages/HomePage/HomePage.js";
 
 function App() {
   return (
     <>
       <Header />
-      <Wrapper />
+      <HomePage />
     </>
   );
 }
