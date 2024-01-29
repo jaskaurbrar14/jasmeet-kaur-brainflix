@@ -41,9 +41,7 @@
     border: 1px solid $sec-mercury;
     border-radius: 4px;
     @include tablet {
-      flex: 0 1 auto;
-
-      width: auto;
+      flex: 1 0 auto;
       margin-left: auto;
       width: 15rem;
     }
@@ -60,7 +58,7 @@
       padding: 0.375rem;
       display: inline-block;
       border: none;
-      max-width: 94%;
+      width: 94%;
 
       @include tablet {
         @include text(0.75rem, 400, 1.25rem, $prm-black);
@@ -75,6 +73,7 @@
   &-button {
     flex: 0 0 100%;
     display: block;
+    text-decoration: none;
     @include tablet {
       flex: 1 0 auto;
     }

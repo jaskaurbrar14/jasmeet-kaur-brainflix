@@ -50,6 +50,7 @@ export default function HomePage() {
       <Video videoDetail={videoDetail} />
       <div className="Main-page">
         <Main videoDetail={videoDetail} />
+        <hr className="Main-page__divider" />
         <Aside videos={videos} videoDetail={videoDetail} />
       </div>
     </>

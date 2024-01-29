@@ -49,7 +49,7 @@ export default function Comments({ videoDetail }) {
             <li className="Comments__comment" key={comment.id}>
               <img
                 className="Comments__comment-img"
-                src=" "
+                src={comment.image}
                 alt="placeholder for users"
               ></img>
               <section className="Comments__comment-info">
@@ -69,12 +69,12 @@ export default function Comments({ videoDetail }) {
                 <p className="Comments__comment-info-comment">
                   {comment.comment}
                 </p>
+                <hr className="Comments__comment-info-divider" />
               </section>
             </li>
           );
         })}
       </ul>
-      <hr className="divider" />
     </>
   );
 }

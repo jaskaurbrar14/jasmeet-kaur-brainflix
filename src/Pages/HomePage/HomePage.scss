@@ -16,4 +16,13 @@
     width: 76.5rem;
     @include page-width(0 auto);
   }
+  &__divider {
+    display: none;
+    @include desktop {
+      stroke-width: 1px;
+      color: $sec-mercury;
+      display: block;
+      width: auto;
+    }
+  }
 }

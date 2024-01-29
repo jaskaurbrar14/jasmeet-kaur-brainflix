@@ -104,10 +104,10 @@
         border-radius: 50%;
         object-fit: cover;
         object-position: left;
+        flex: 1 0 auto;
         @include tablet {
           width: 2.5rem;
           height: 2.5rem;
-          flex: 0 1 auto;
         }
       }
       &-info {
@@ -132,6 +132,14 @@
           @include text(0.8125rem, 400, 1.125rem, $prm-black);
           @include tablet {
             @include text(0.875rem, 400, 1.375rem, $prm-black);
+          }
+        }
+        &-divider {
+          margin-top: 1rem;
+          stroke-width: 1px;
+          color: $sec-mercury;
+          @include tablet {
+            width: auto;
           }
         }
       }
