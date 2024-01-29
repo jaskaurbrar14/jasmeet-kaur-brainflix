@@ -3,11 +3,10 @@ import add_comment from "../../Assets/Icons/add_comment.svg";
 import mohanMuruge from "../../Assets/Images/Mohan-muruge.jpg";
 
 export default function Comments({ videoDetail }) {
+  const commentDetail = videoDetail?.comments || [];
   return (
     <>
-      <h3 className="Comments__sub-heading">
-        {videoDetail.comments.length} Comments
-      </h3>
+      <h3 className="Comments__sub-heading">{commentDetail.length} Comments</h3>
       <form className="Comments__form" action="">
         <img
           className="Comments__form-img"
@@ -45,32 +44,34 @@ export default function Comments({ videoDetail }) {
       </form>
       <hr className="divider" />
       <ul className="Comments__comment-list">
-        {videoDetail.comments.map((comment) => {
-          <li className="Comments__comment" key={comment.id}>
-            <img
-              className="Comments__comment-img"
-              src=" "
-              alt="placeholder for users"
-            ></img>
-            <section className="Comments__comment-info">
-              <div className="Comments__comment-info-user">
-                <h3 className="Comments__comment-info-user-heading">
-                  {" "}
-                  {comment.name}{" "}
-                </h3>
-                <p className="Comments__comment-info-user-date">
-                  {new Date(comment.timestamp).toLocaleDateString("en-US", {
-                    year: "numeric",
-                    month: "2-digit",
-                    day: "2-digit",
-                  })}
+        {commentDetail.map((comment) => {
+          return (
+            <li className="Comments__comment" key={comment.id}>
+              <img
+                className="Comments__comment-img"
+                src=" "
+                alt="placeholder for users"
+              ></img>
+              <section className="Comments__comment-info">
+                <div className="Comments__comment-info-user">
+                  <h3 className="Comments__comment-info-user-heading">
+                    {" "}
+                    {comment.name}{" "}
+                  </h3>
+                  <p className="Comments__comment-info-user-date">
+                    {new Date(comment.timestamp).toLocaleDateString("en-US", {
+                      year: "numeric",
+                      month: "2-digit",
+                      day: "2-digit",
+                    })}
+                  </p>
+                </div>
+                <p className="Comments__comment-info-comment">
+                  {comment.comment}
                 </p>
-              </div>
-              <p className="Comments__comment-info-comment">
-                {comment.comment}
-              </p>
-            </section>
-          </li>;
+              </section>
+            </li>
+          );
         })}
       </ul>
       <hr className="divider" />

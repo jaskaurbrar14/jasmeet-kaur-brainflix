@@ -1,8 +1,6 @@
 import Main from "../../components/Main/Main.js";
 import Aside from "../../components/Aside/Aside.js";
 import Video from "../../components/Video/Video.js";
-// import videoDetailsData from "../../Data/video-details.json";
-// import videosData from "../../Data/videos.json";
 import { useState, useEffect } from "react";
 import "./HomePage.scss";
 import axios from "axios";
@@ -42,16 +40,18 @@ export default function HomePage() {
   useEffect(() => {
     if (videoId) {
       getVideoDetails(videoId);
-    } else if (videos.length > 0) {
+    } else if (!videoId && videos.length > 0) {
       getVideoDetails(videos[0].id);
     }
   }, [videoId, videos]);
 
   return (
-    <div className="Main-page">
+    <>
       <Video videoDetail={videoDetail} />
-      <Main videoDetail={videoDetail} />
-      <Aside videos={videos} videoDetail={videoDetail} />
-    </div>
+      <div className="Main-page">
+        <Main videoDetail={videoDetail} />
+        <Aside videos={videos} videoDetail={videoDetail} />
+      </div>
+    </>
   );
 }
