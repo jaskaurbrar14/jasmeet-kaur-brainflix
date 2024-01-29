@@ -3,17 +3,18 @@ import brainflixLogo from "../../Assets/Logo/BrainFlix-logo.svg";
 import searchIcon from "../../Assets/Icons/search.svg";
 import upload from "../../Assets/Icons/upload.svg";
 import mohanMuruge from "../../Assets/Images/Mohan-muruge.jpg";
+import { Link } from "react-router-dom";
 
 export default function Header() {
   return (
     <header className="header">
-      <a href="#" className="header-logo">
+      <Link to="/" className="header-logo">
         <img
           className="header-logo__img"
           src={brainflixLogo}
           alt="Brainflix Logo"
         />
-      </a>
+      </Link>
       <div className="header-search">
         <img
           className="header-search__icon"
@@ -27,15 +28,28 @@ export default function Header() {
           name="search"
         />
       </div>
-      <button className="header-button" type="button">
-        <img className="header-button__img" src={upload} alt="upload button" />
-        Upload
-      </button>
+      <Link to="/video-upload-page" className="header-button">
+        <button className="header-button__btn" type="button">
+          <img
+            className="header-button__btn-img"
+            src={upload}
+            alt="upload button"
+          />
+          Upload
+        </button>
+      </Link>
+
       <img className="header-profile" src={mohanMuruge} alt="Mohan Muruge" />
-      <button type="button" className="header-upload">
-        <img className="header-upload__img" src={upload} alt="upload button" />
-        Upload
-      </button>
+      <Link to="/video-upload-page" className="header-upload">
+        <button type="button" className="header-upload__btn">
+          <img
+            className="header-upload__btn-img"
+            src={upload}
+            alt="upload button"
+          />
+          Upload
+        </button>
+      </Link>
     </header>
   );
 }

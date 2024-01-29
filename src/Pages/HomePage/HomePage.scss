@@ -13,7 +13,16 @@
     gap: 1.5rem;
     flex-direction: row;
     flex-wrap: wrap;
-    width: 80rem;
+    width: 76.5rem;
     @include page-width(0 auto);
+  }
+  &__divider {
+    display: none;
+    @include desktop {
+      stroke-width: 1px;
+      color: $sec-mercury;
+      display: block;
+      width: auto;
+    }
   }
 }

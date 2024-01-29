@@ -1,1 +1,11 @@
+@use "styles/partials/global" as *;
+@use "styles/partials/variables" as *;
+@use "styles/partials/mixins" as *;
 
+.divider {
+  stroke-width: 1px;
+  color: $sec-mercury;
+  @include tablet {
+    width: 100%;
+  }
+}
