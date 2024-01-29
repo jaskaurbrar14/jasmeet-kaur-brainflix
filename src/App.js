@@ -9,7 +9,7 @@ function App() {
     <>
       <BrowserRouter>
         <Header />
-
+        <hr className="divider" />
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/videos" element={<HomePage />} />
