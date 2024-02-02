@@ -9,8 +9,12 @@ export default function Aside({ videos, videoDetail }) {
       <h3 className="aside__heading">Next videos</h3>
       <ul className="aside__list">
         {filteredVideos.map((video) => (
-          <li key={video.id}>
-            <Link className="aside__list-video" to={`videos/${video.id}`}>
+          <li>
+            <Link
+              className="aside__list-video"
+              to={`/videos/${video.id}`}
+              key={video.id}
+            >
               <img
                 className="aside__list-video-img"
                 src={video.image}
