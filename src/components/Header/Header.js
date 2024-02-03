@@ -15,31 +15,37 @@ export default function Header() {
           alt="Brainflix Logo"
         />
       </Link>
-      <div className="header-search">
+      <div className="header-wrapper">
+        <div className="header-wrapper__search">
+          <img
+            className="header-wrapper__search-icon"
+            src={searchIcon}
+            alt="search icon"
+          />
+          <input
+            className="header-wrapper__search-input"
+            type="text"
+            placeholder="Search"
+            name="search"
+          />
+        </div>
+        <Link to="/video-upload-page" className="header-wrapper__button">
+          <button className="header-wrapper__button-btn" type="button">
+            <img
+              className="header-wrapper__button-btn-img"
+              src={upload}
+              alt="upload button"
+            />
+            Upload
+          </button>
+        </Link>
+
         <img
-          className="header-search__icon"
-          src={searchIcon}
-          alt="search icon"
-        />
-        <input
-          className="header-search__input"
-          type="text"
-          placeholder="Search"
-          name="search"
+          className="header-wrapper__profile"
+          src={mohanMuruge}
+          alt="Mohan Muruge"
         />
       </div>
-      <Link to="/video-upload-page" className="header-button">
-        <button className="header-button__btn" type="button">
-          <img
-            className="header-button__btn-img"
-            src={upload}
-            alt="upload button"
-          />
-          Upload
-        </button>
-      </Link>
-
-      <img className="header-profile" src={mohanMuruge} alt="Mohan Muruge" />
       <Link to="/video-upload-page" className="header-upload">
         <button type="button" className="header-upload__btn">
           <img
