@@ -29,33 +29,22 @@ export default function Header() {
             name="search"
           />
         </div>
-        <Link to="/video-upload-page" className="header-wrapper__button">
-          <button className="header-wrapper__button-btn" type="button">
+        <img
+          className="header-wrapper__profile"
+          src={mohanMuruge}
+          alt="Mohan Muruge"
+        />
+        <Link to="/video-upload-page" className="header-wrapper__upload">
+          <button type="button" className="header-wrapper__upload-btn">
             <img
-              className="header-wrapper__button-btn-img"
+              className="header-wrapper__upload-btn-img"
               src={upload}
               alt="upload button"
             />
             Upload
           </button>
         </Link>
-
-        <img
-          className="header-wrapper__profile"
-          src={mohanMuruge}
-          alt="Mohan Muruge"
-        />
       </div>
-      <Link to="/video-upload-page" className="header-upload">
-        <button type="button" className="header-upload__btn">
-          <img
-            className="header-upload__btn-img"
-            src={upload}
-            alt="upload button"
-          />
-          Upload
-        </button>
-      </Link>
     </header>
   );
 }
