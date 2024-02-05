@@ -94,53 +94,55 @@
   }
   &__comment-list {
     .Comments__comment {
-      display: flex;
-      gap: 1rem;
-      padding: 1rem 0 1rem 0;
-      &-img {
-        background-color: $sec-mercury;
-        width: 2.25rem;
-        height: 2.25rem;
-        border-radius: 50%;
-        object-fit: cover;
-        object-position: left;
-        flex: 1 0 auto;
-        @include tablet {
-          width: 2.5rem;
-          height: 2.5rem;
+      list-style: none;
+      &-wrapper {
+        display: flex;
+        gap: 1rem;
+        padding: 1rem 0 1rem 0;
+        &-img {
+          background-color: $sec-mercury;
+          width: 2.25rem;
+          height: 2.25rem;
+          border-radius: 50%;
+          object-fit: cover;
+          object-position: left;
+          flex: 1 0 auto;
+          @include tablet {
+            width: 2.5rem;
+            height: 2.5rem;
+          }
+        }
+        &-info {
+          gap: 1.5rem;
+          &-user {
+            display: flex;
+            justify-content: space-between;
+            &-heading {
+              @include text(0.8125rem, 700, 1.125rem, $prm-black);
+              @include tablet {
+                @include text(0.875rem, 700, 1.375rem, $prm-black);
+              }
+            }
+            &-date {
+              @include text(0.8125rem, 400, 1.125rem, $prm-silver);
+              @include tablet {
+                @include text(0.875rem, 400, 1.375rem, $prm-silver);
+              }
+            }
+          }
+          &-comment {
+            @include text(0.8125rem, 400, 1.125rem, $prm-black);
+            @include tablet {
+              @include text(0.875rem, 400, 1.375rem, $prm-black);
+            }
+          }
         }
       }
-      &-info {
-        gap: 1.5rem;
-        &-user {
-          display: flex;
-          justify-content: space-between;
-          &-heading {
-            @include text(0.8125rem, 700, 1.125rem, $prm-black);
-            @include tablet {
-              @include text(0.875rem, 700, 1.375rem, $prm-black);
-            }
-          }
-          &-date {
-            @include text(0.8125rem, 400, 1.125rem, $prm-silver);
-            @include tablet {
-              @include text(0.875rem, 400, 1.375rem, $prm-silver);
-            }
-          }
-        }
-        &-comment {
-          @include text(0.8125rem, 400, 1.125rem, $prm-black);
-          @include tablet {
-            @include text(0.875rem, 400, 1.375rem, $prm-black);
-          }
-        }
-        &-divider {
-          margin-top: 1rem;
-          stroke-width: 1px;
-          color: $sec-mercury;
-          @include tablet {
-            width: auto;
-          }
+      &-divider {
+        stroke-width: 1px;
+        color: $sec-mercury;
+        @include tablet {
+          width: auto;
         }
       }
     }

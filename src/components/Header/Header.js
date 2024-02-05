@@ -15,41 +15,36 @@ export default function Header() {
           alt="Brainflix Logo"
         />
       </Link>
-      <div className="header-search">
+      <div className="header-wrapper">
+        <div className="header-wrapper__search">
+          <img
+            className="header-wrapper__search-icon"
+            src={searchIcon}
+            alt="search icon"
+          />
+          <input
+            className="header-wrapper__search-input"
+            type="text"
+            placeholder="Search"
+            name="search"
+          />
+        </div>
         <img
-          className="header-search__icon"
-          src={searchIcon}
-          alt="search icon"
+          className="header-wrapper__profile"
+          src={mohanMuruge}
+          alt="Mohan Muruge"
         />
-        <input
-          className="header-search__input"
-          type="text"
-          placeholder="Search"
-          name="search"
-        />
+        <Link to="/video-upload-page" className="header-wrapper__upload">
+          <button type="button" className="header-wrapper__upload-btn">
+            <img
+              className="header-wrapper__upload-btn-img"
+              src={upload}
+              alt="upload button"
+            />
+            Upload
+          </button>
+        </Link>
       </div>
-      <Link to="/video-upload-page" className="header-button">
-        <button className="header-button__btn" type="button">
-          <img
-            className="header-button__btn-img"
-            src={upload}
-            alt="upload button"
-          />
-          Upload
-        </button>
-      </Link>
-
-      <img className="header-profile" src={mohanMuruge} alt="Mohan Muruge" />
-      <Link to="/video-upload-page" className="header-upload">
-        <button type="button" className="header-upload__btn">
-          <img
-            className="header-upload__btn-img"
-            src={upload}
-            alt="upload button"
-          />
-          Upload
-        </button>
-      </Link>
     </header>
   );
 }

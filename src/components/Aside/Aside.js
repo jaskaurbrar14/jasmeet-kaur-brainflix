@@ -3,14 +3,13 @@ import { Link } from "react-router-dom";
 
 export default function Aside({ videos, videoDetail }) {
   const filteredVideos = videos.filter((Video) => Video.id !== videoDetail.id);
-
   return (
     <aside className="aside">
       <h3 className="aside__heading">Next videos</h3>
       <ul className="aside__list">
         {filteredVideos.map((video) => (
           <li key={video.id}>
-            <Link className="aside__list-video" to={`videos/${video.id}`}>
+            <Link className="aside__list-video" to={`/videos/${video.id}`}>
               <img
                 className="aside__list-video-img"
                 src={video.image}

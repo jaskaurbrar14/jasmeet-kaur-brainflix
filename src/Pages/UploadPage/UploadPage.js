@@ -2,14 +2,29 @@ import "./UploadPage.scss";
 import videoThumbnail from "../../Assets/Images/Upload-video-preview.jpg";
 import publish from "../../Assets/Icons/publish.svg";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
+
+const REACT_APP_SERVER_URL = process.env.REACT_APP_SERVER_URL;
 
 export default function UploadPage() {
   const navigate = useNavigate();
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
+    const title = event.target.title.value;
+    const description = event.target.description.value;
+    try {
+      await axios.post(`${REACT_APP_SERVER_URL}/videos`, {
+        title: title,
+        description: description,
+      });
+      event.target.reset();
+    } catch (err) {
+      console.log(err);
+    }
     alert("Your upload was successful! You're being redirected to Main page");
-    navigate("/");
+    setTimeout(() => navigate("/"), 2000);
   };
+
   return (
     <main className="UploadPage">
       <h1 className="UploadPage__heading">Upload Video</h1>
@@ -31,15 +46,15 @@ export default function UploadPage() {
           <div className="UploadPage__form-text-title">
             <label
               className="UploadPage__form-text-title-label"
-              htmlFor="video title"
+              htmlFor="title"
             >
               Title your video
             </label>
             <input
               className="UploadPage__form-text-title-input"
-              id="video title"
+              id="title"
               type="text"
-              name="video title"
+              name="title"
               placeholder="Add a title to your video"
               minLength="1"
               maxLength="100"
@@ -49,15 +64,15 @@ export default function UploadPage() {
           <div className="UploadPage__form-text-description">
             <label
               className="UploadPage__form-text-description-label"
-              htmlFor="video description"
+              htmlFor="description"
             >
               Add a video description
             </label>
             <textarea
               className="UploadPage__form-text-description-input"
-              id="video description"
+              id="description"
               type="text"
-              name="video description"
+              name="description"
               placeholder="Add a description to your video"
               minLength="1"
               maxLength="200"
