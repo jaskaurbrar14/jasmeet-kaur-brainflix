@@ -21,9 +21,8 @@ export default function UploadPage() {
     } catch (err) {
       console.log(err);
     }
-
     alert("Your upload was successful! You're being redirected to Main page");
-    navigate("/");
+    setTimeout(() => navigate("/"), 2000);
   };
 
   return (

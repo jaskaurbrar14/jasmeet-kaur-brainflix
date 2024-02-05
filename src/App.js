@@ -6,7 +6,6 @@ import UploadPage from "./Pages/UploadPage/UploadPage.js";
 
 function App() {
   return (
-    // <videosContext.Provider>
     <>
       <BrowserRouter>
         <Header />
@@ -19,7 +18,6 @@ function App() {
         </Routes>
       </BrowserRouter>
     </>
-    // </videosContext.Provider>
   );
 }
 

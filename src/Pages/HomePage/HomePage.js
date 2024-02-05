@@ -6,15 +6,11 @@ import "./HomePage.scss";
 import axios from "axios";
 import { useParams } from "react-router-dom";
 
-// export const videosContext = createContext();
 export default function HomePage() {
   const REACT_APP_SERVER_URL = process.env.REACT_APP_SERVER_URL;
 
   const [videos, setVideos] = useState([]);
   const [videoDetail, setVideoDetail] = useState({});
-
-  // const apiUrl = "https://project-2-api.herokuapp.com";
-  // const apiKey = "c67354cc-9322-4ecb-bd91-70c26505c98c";
 
   const { videoId } = useParams();
 
