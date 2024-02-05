@@ -16,6 +16,7 @@ export default function UploadPage() {
       await axios.post(`${REACT_APP_SERVER_URL}/videos`, {
         title: title,
         description: description,
+        image: "http://localhost:8082/videos/images/image9.jpeg",
       });
       event.target.reset();
     } catch (err) {
