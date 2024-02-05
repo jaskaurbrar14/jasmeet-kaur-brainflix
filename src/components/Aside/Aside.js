@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 
 export default function Aside({ videos, videoDetail }) {
   const filteredVideos = videos.filter((Video) => Video.id !== videoDetail.id);
-
   return (
     <aside className="aside">
       <h3 className="aside__heading">Next videos</h3>

@@ -25,6 +25,7 @@ export default function UploadPage() {
     alert("Your upload was successful! You're being redirected to Main page");
     navigate("/");
   };
+
   return (
     <main className="UploadPage">
       <h1 className="UploadPage__heading">Upload Video</h1>
